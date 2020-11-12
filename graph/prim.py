@@ -31,7 +31,7 @@ class Graph():
 
         parent[0] = -1
 
-        for cout in range(self.V):
+        for _ in range(self.V):
             u = self.minKey(key, mstSet)
             mstSet[u] = True
             for v in range(self.V):
