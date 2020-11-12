@@ -44,6 +44,7 @@ def print_optimal_parens(s, i, j):
         print_optimal_parens(s, s[i][j], j)
         print(")",end=''),
 
-# example
-m, s = matrix_chain_order([5,10,3,12,5,50,6])
-print_optimal_parens(s,0, len(s)-1)
+if __name__ == "__main__":
+    # example
+    m, s = matrix_chain_order([5,10,3,12,5,50,6])
+    print_optimal_parens(s,0, len(s)-1)
