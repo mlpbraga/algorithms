@@ -7,8 +7,10 @@ def knapsack(W, wt, val, n):
         for w in range(W + 1): 
             if i == 0 or w == 0: 
                 K[i][w] = 0
-            elif wt[i-1] <= w: 
+                print(f'k({i},{w}) = 0')
+            elif wt[i-1] <= w:
                 K[i][w] = max(val[i-1] + K[i-1][w-wt[i-1]],  K[i-1][w]) 
+                print(f'K({i},{w}) = max({val[i-1]} + K({i-1},{w-wt[i-1]}), K({i-1},{w}))')
             else: 
                 K[i][w] = K[i-1][w] 
   
@@ -21,3 +23,4 @@ if __name__ == "__main__":
     n = len(val)
     max_value, matrix = knapsack(W, wt, val, n)
     print('valor máximo = ', max_value)
+    print(DataFrame(matrix))
